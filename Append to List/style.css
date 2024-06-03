@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-user-drag: none;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: cadetblue;
+}
+
+.content {
+    height: 15vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 5px;
+}
+
+.input-box {
+    width: 50vh;
+}
+
+.add {
+    width: 15vh;
+    height: 8vh;
+}
+
+.reset {
+    width: 15vh;
+    height: 8vh;
+}
+
+.list {
+    position: relative;
+    left: 50px;
+}
+
+.go-back {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-radius: 100vh;
+    background-color: rgb(70, 70, 255);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    left: 50px;
+    top: 50px;
+}

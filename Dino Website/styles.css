@@ -1,0 +1,133 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: rgb(240, 240, 201);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5vh;
+  background-image: url(img/background-image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.outside {
+  width: auto;
+  text-align: center;
+}
+
+.outside h1 {
+  margin-bottom: 5vh;
+  color: white;
+}
+
+.outside h2 {
+  margin-bottom: vh;
+  color: white;
+}
+
+.game {
+  width: 600px;
+  height: 200px;
+  border: 1px solid black;
+  margin: auto;
+  background-image: url("img/background.png");
+}
+
+#dino {
+  width: 50px;
+  height: 50px;
+  background-image: url(img/trex.png);
+  background-size: 50px 50px;
+  position: relative;
+  top: 150px;
+}
+
+.jump {
+  animation: jump 0.3s linear;
+  background-image: url("img/boost.png");
+  background-size: 50px 50px;
+  position: relative;
+  top: 150px;
+}
+
+@keyframes jump {
+  0% {
+    top: 150px;
+  }
+  30% {
+    top: 130px;
+  }
+  50% {
+    top: 80px;
+  }
+  80% {
+    top: 130px;
+  }
+  100% {
+    top: 150px;
+  }
+}
+
+#cactus {
+  width: 20px;
+  height: 40px;
+  position: relative;
+  top: 110px;
+  left: 580px;
+  background-image: url("img/cactus.png");
+  background-size: 20px 40px;
+}
+
+.animate {
+  animation: block 1s infinite linear;
+}
+
+@keyframes block {
+  0% {
+    left: 580px;
+  }
+  100% {
+    left: -20px;
+  }
+}
+
+.go-back {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  border-radius: 100vh;
+  background-color: rgb(70, 70, 255);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  left: 50px;
+  top: 50px;
+}
+
+.centered-button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5vh;
+  border: red 5px solid;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 0 5px white;
+  width: 10vh;
+  height: 10vh;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}

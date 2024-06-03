@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome Dino Game!</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <button class="centered-button" id="start-button">Start Game</button>
+
+  <div class="outside">
+    <h1>Welcome to the Bike Game! 🏍️</h1>
+    <h2 id="timer">Timer: 0s</h2>
+    <h2 id="lives-counter">Lives: 3</h2>
+  </div>
+
+  <div class="game">
+    <div id="dino"></div>
+    <div id="cactus"></div>
+    <div id="background"></div>
+    <div id="boost"></div>
+  </div>
+
+  <audio id="jumpSound">
+    <source src="jumpsound.ogg" type="audio/ogg">
+  </audio>
+  <audio id="bikeSound" loop>
+    <source src="bikesound.ogg" type="audio/ogg">
+  </audio>
+
+  <a href="../index.html"><button class="go-back">Go Back</button></a>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
