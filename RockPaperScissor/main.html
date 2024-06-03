@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Tikilakiloe</title>
+</head>
+<body>
+  <div class="Background">
+    <div class="Main">
+      <h1 class="MainHeader">Sten Sax Påse Spel</h1>
+      <h2 class="UnderHeader">Välj en ruta under för att spela!</h2>
+      <div class="boxes3">
+        <div class="box1" onclick="spela('scissor')">
+          <h1 class="headers">Sax</h1>
+          <img src="scissor.png" alt="scissor" class="scissor" height="150px" width="150px">
+        </div>
+        <div class="box2" onclick="spela('rock')">
+          <h1 class="headers">Sten</h1>
+          <img src="rock.png" alt="rock" class="rock" height="130px" width="130px">
+        </div>
+        <div class="box3" onclick="spela('paper')">
+          <h1 class="headers">Påse</h1>
+          <img src="paper.png" alt="paper" class="paper" height="130px" width="130px">
+        </div>
+      </div>
+    </div>
+    <div class="display">
+      <p id="scores">Spelar Poäng: 0, Bot Poäng: 0</p>
+    </div>
+  </div>
+  
+  <canvas id="confetti" style="display: none;"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+  
+
+  <a href="../index.html"><button class="go-back">Go Back</button></a>
+
+
+  <script>
+    let spelarPoäng = 0;
+    let botPoäng = 0;
+    const jsConfetti = new JSConfetti();
+
+    function spela(spelarVal) {
+      const val = ['rock', 'paper', 'scissor'];
+      const datorVal = val[Math.floor(Math.random() * val.length)]; // Random number gånger antal element i arrayen.
+      
+      if (spelarVal === datorVal) {
+        alert("Det blev oavgjort! 🤝");
+      } else if (
+        (spelarVal === 'rock' && datorVal === 'scissor') ||
+        (spelarVal === 'paper' && datorVal === 'rock') ||
+        (spelarVal === 'scissor' && datorVal === 'paper')
+      ) {
+        spelarPoäng++;
+        document.getElementById('scores').textContent = 'Spelarens Poäng: ' + spelarPoäng + ', Bot Poäng: ' + botPoäng;
+        alert('Du vann! 🏆');
+        jsConfetti.addConfetti();
+      } else {
+        botPoäng++;
+        document.getElementById('scores').textContent = 'Spelarens Poäng: ' + spelarPoäng + ', Bot Poäng: ' + botPoäng;
+        alert('Datorn vann! 😭');
+      }
+    }
+  </script>
+</body>
+</html>
